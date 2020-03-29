@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if error=='404'%}
+    <div class="alert alert-warning  alert-dismissible fade show" role="alert">
+      <h4 class="alert-heading">Oopsy!</h4>
+      <p>Somethin went wrong? I think this post does not exist for now</p>
+      <hr>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p class="mb-0">I think you should visit <a href='/' class="link">home page</a></p>
+    </div>
+  {% else %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Holy guacamole!</strong>Something went wrong
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% endif %}
+{% endblock %}

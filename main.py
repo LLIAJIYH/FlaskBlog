@@ -47,9 +47,11 @@ def new_post():
 
 @app.route('/p/<int:post_id>/')
 def p(post_id):
-	current_post = Post.query.get(post_id)
-	return render_template('post.html', post=current_post)
-	
+	try:
+		current_post = Post.query.get(post_id)
+		return render_template('post.html', post=current_post, title=current_post.title)
+	except:
+		return render_template('error.html', error='404')
 
 
 if __name__=='__main__':
