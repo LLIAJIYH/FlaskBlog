@@ -1,2 +1,2 @@
 # FlaskBlog
-Simple blog with account system on Flask
+Simple blog on Flask
